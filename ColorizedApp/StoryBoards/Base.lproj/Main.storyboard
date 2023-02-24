@@ -55,19 +55,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-C5-ogg">
                                                 <rect key="frame" x="39.333333333333336" y="0.0" width="35.000000000000007" height="110"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT4-Iu-XZJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT4-Iu-XZJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjU-ps-ewv">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjU-ps-ewv">
                                                         <rect key="frame" x="0.0" y="40" width="35" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemBackgroundColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDo-xX-EyF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDo-xX-EyF">
                                                         <rect key="frame" x="0.0" y="80" width="35" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -135,16 +135,22 @@
                         <outlet property="greenValueLabel" destination="MjU-ps-ewv" id="Quq-5g-CnK"/>
                         <outlet property="redSlider" destination="Jiu-wc-rmr" id="dj9-3Q-kfe"/>
                         <outlet property="redValueLabel" destination="eT4-Iu-XZJ" id="Z2v-XW-Shk"/>
+                        <outletCollection property="colorSliders" destination="Jiu-wc-rmr" collectionClass="NSMutableArray" id="CvT-40-3uV"/>
+                        <outletCollection property="colorSliders" destination="ubp-hA-tEM" collectionClass="NSMutableArray" id="clE-RF-Kg0"/>
+                        <outletCollection property="colorSliders" destination="h5f-HV-5N9" collectionClass="NSMutableArray" id="mC6-7P-s1N"/>
+                        <outletCollection property="colorLabels" destination="eT4-Iu-XZJ" collectionClass="NSMutableArray" id="Nbj-8o-Ox3"/>
+                        <outletCollection property="colorLabels" destination="MjU-ps-ewv" collectionClass="NSMutableArray" id="FOo-zH-hbB"/>
+                        <outletCollection property="colorLabels" destination="dDo-xX-EyF" collectionClass="NSMutableArray" id="4G9-Gl-zHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-25.190839694656489" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Background View Controller-->
         <scene sceneID="tyI-RV-PMP">
             <objects>
-                <viewController id="9bS-93-lCC" sceneMemberID="viewController">
+                <viewController id="9bS-93-lCC" customClass="BackgroundViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BcF-uC-D2h">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

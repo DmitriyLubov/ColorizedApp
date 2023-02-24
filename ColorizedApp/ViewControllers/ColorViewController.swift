@@ -19,15 +19,18 @@ final class ColorViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var colorSliders: [UISlider]!
+    @IBOutlet var colorLabels: [UILabel]!
+    
+    var color: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         colorAreaView.layer.cornerRadius = 10
         
-        redValueLabel.text = redSlider.value.formatted()
-        greenValueLabel.text = greenSlider.value.formatted()
-        blueValueLabel.text = blueSlider.value.formatted()
-        
+        updateSlider()
+        setValue()
         changeColorView()
     }
 
@@ -51,15 +54,38 @@ final class ColorViewController: UIViewController {
         blueValueLabel.text = blueValue.formatted()
         changeColorView()
     }
-    
-    private func changeColorView() {
+}
+
+// MARK: - Private Methods
+private extension ColorViewController {
+    func changeColorView() {
         colorAreaView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
+            red: CGFloat(colorSliders[0].value),
+            green: CGFloat(colorSliders[1].value),
+            blue: CGFloat(colorSliders[2].value),
             alpha: 1
         )
     }
     
+    func updateSlider() {
+        guard let components = color.cgColor.components else { return }
+        
+        if components.count < 4 {
+            colorSliders.forEach { $0.value = Float(components.first ?? 0)}
+        } else {
+            for (slider, component) in zip(colorSliders, components) {
+                slider.value = Float(component)
+            }
+        }
+    }
+    
+    func setValue() {
+        for (label, slider) in zip(colorLabels, colorSliders) {
+            label.text = string(from: slider)
+        }
+    }
+    
+    func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
-

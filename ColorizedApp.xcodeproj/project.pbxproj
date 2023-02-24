@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60034AE29A8DAE8001D1943 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60034AD29A8DAE8001D1943 /* BackgroundViewController.swift */; };
 		B6B563482990ED5400038568 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B563472990ED5400038568 /* AppDelegate.swift */; };
 		B6B5634A2990ED5400038568 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B563492990ED5400038568 /* SceneDelegate.swift */; };
 		B6B5634C2990ED5400038568 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5634B2990ED5400038568 /* ColorViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B60034AD29A8DAE8001D1943 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		B6B563442990ED5400038568 /* ColorizedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorizedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B563472990ED5400038568 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B563492990ED5400038568 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		B613203929A8C36900EB0875 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B60034AD29A8DAE8001D1943 /* BackgroundViewController.swift */,
 				B6B5634B2990ED5400038568 /* ColorViewController.swift */,
 			);
 			path = ViewControllers;
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60034AE29A8DAE8001D1943 /* BackgroundViewController.swift in Sources */,
 				B6B5634C2990ED5400038568 /* ColorViewController.swift in Sources */,
 				B6B563482990ED5400038568 /* AppDelegate.swift in Sources */,
 				B6B5634A2990ED5400038568 /* SceneDelegate.swift in Sources */,
