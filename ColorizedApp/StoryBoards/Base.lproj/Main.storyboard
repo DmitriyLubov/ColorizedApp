@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ColorViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="KQe-nY-ZnB">
@@ -85,21 +85,21 @@
                                                         <rect key="frame" x="-2" y="0.0" width="285.66666666666669" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                         <connections>
-                                                            <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="ZtC-ne-KtU"/>
+                                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="oH4-ix-kit"/>
                                                         </connections>
                                                     </slider>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.27000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ubp-hA-tEM">
                                                         <rect key="frame" x="-2" y="40" width="285.66666666666669" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                         <connections>
-                                                            <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="PbU-DQ-MAc"/>
+                                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="6sr-pk-abC"/>
                                                         </connections>
                                                     </slider>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.48999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-HV-5N9">
                                                         <rect key="frame" x="-2" y="80" width="285.66666666666669" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.64937006052420976" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
-                                                            <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="pa9-rT-p5z"/>
+                                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Eia-eV-exg"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
@@ -109,12 +109,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyB-n8-8Ks">
-                                <rect key="frame" x="157.66666666666666" y="630" width="78" height="53"/>
+                                <rect key="frame" x="157.66666666666666" y="665" width="78" height="53"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qi8-m6-XFz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -128,13 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueSlider" destination="h5f-HV-5N9" id="C66-6a-G8o"/>
-                        <outlet property="blueValueLabel" destination="dDo-xX-EyF" id="LhX-7D-HHb"/>
                         <outlet property="colorAreaView" destination="dkN-9F-MGE" id="GUy-23-Bqk"/>
-                        <outlet property="greenSlider" destination="ubp-hA-tEM" id="8rB-UT-MuI"/>
-                        <outlet property="greenValueLabel" destination="MjU-ps-ewv" id="Quq-5g-CnK"/>
-                        <outlet property="redSlider" destination="Jiu-wc-rmr" id="dj9-3Q-kfe"/>
-                        <outlet property="redValueLabel" destination="eT4-Iu-XZJ" id="Z2v-XW-Shk"/>
                         <outletCollection property="colorSliders" destination="Jiu-wc-rmr" collectionClass="NSMutableArray" id="CvT-40-3uV"/>
                         <outletCollection property="colorSliders" destination="ubp-hA-tEM" collectionClass="NSMutableArray" id="clE-RF-Kg0"/>
                         <outletCollection property="colorSliders" destination="h5f-HV-5N9" collectionClass="NSMutableArray" id="mC6-7P-s1N"/>
@@ -160,7 +157,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="square.and.pencil" catalog="system"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="CQ2-eg-FAY"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="CQ2-eg-FAY"/>
                                 </connections>
                             </button>
                         </subviews>

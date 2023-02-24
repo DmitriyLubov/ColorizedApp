@@ -11,60 +11,45 @@ final class ColorViewController: UIViewController {
     
     @IBOutlet var colorAreaView: UIView!
     
-    @IBOutlet var redValueLabel: UILabel!
-    @IBOutlet var greenValueLabel: UILabel!
-    @IBOutlet var blueValueLabel: UILabel!
-    
-    @IBOutlet var redSlider: UISlider!
-    @IBOutlet var greenSlider: UISlider!
-    @IBOutlet var blueSlider: UISlider!
-    
     @IBOutlet var colorSliders: [UISlider]!
     @IBOutlet var colorLabels: [UILabel]!
     
     var color: UIColor!
+    unowned var delegate: ColorViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorAreaView.layer.cornerRadius = 10
-        
-        updateSlider()
-        setValue()
-        changeColorView()
+        updateView()
     }
 
-    @IBAction func redSliderAction() {
-        let redValue = round(redSlider.value * 100) / 100
+    @IBAction func sliderAction(_ sender: UISlider) {
+        for (label, slider) in zip(colorLabels, colorSliders) {
+            if slider == sender {
+                label.text = string(from: slider)
+            }
+        }
         
-        redValueLabel.text = redValue.formatted()
         changeColorView()
     }
     
-    @IBAction func greenSliderAction() {
-        let greenValue = round(greenSlider.value * 100) / 100
+    @IBAction func doneButtonTapped() {
+        guard let backgroundColor = colorAreaView.backgroundColor else { return }
         
-        greenValueLabel.text = greenValue.formatted()
-        changeColorView()
-    }
-    
-    @IBAction func blueSliderAction() {
-        let blueValue = round(blueSlider.value * 100) / 100
+        delegate.setColor(for: backgroundColor)
         
-        blueValueLabel.text = blueValue.formatted()
-        changeColorView()
+        dismiss(animated: true)
     }
 }
 
 // MARK: - Private Methods
 private extension ColorViewController {
-    func changeColorView() {
-        colorAreaView.backgroundColor = UIColor(
-            red: CGFloat(colorSliders[0].value),
-            green: CGFloat(colorSliders[1].value),
-            blue: CGFloat(colorSliders[2].value),
-            alpha: 1
-        )
+    func updateView() {
+        colorAreaView.layer.cornerRadius = 10
+        
+        updateSlider()
+        setValue(for: colorLabels)
+        changeColorView()
     }
     
     func updateSlider() {
@@ -79,9 +64,24 @@ private extension ColorViewController {
         }
     }
     
-    func setValue() {
-        for (label, slider) in zip(colorLabels, colorSliders) {
+    func changeColorView() {
+        colorAreaView.backgroundColor = UIColor(
+            red: CGFloat(colorSliders[0].value),
+            green: CGFloat(colorSliders[1].value),
+            blue: CGFloat(colorSliders[2].value),
+            alpha: 1
+        )
+    }
+    
+    func setValue(for labels: [UILabel]) {
+        for (label, slider) in zip(labels, colorSliders) {
             label.text = string(from: slider)
+        }
+    }
+    
+    func setValue(for textFields: [UITextField]) {
+        for (textField, slider) in zip(textFields, colorSliders) {
+            textField.text = string(from: slider)
         }
     }
     
