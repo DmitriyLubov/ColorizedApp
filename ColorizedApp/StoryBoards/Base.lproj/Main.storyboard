@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bS-93-lCC">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="KQe-nY-ZnB">
-                                <rect key="frame" x="16" y="99" width="361" height="290"/>
+                                <rect key="frame" x="16" y="79" width="361" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-9F-MGE">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="128"/>
@@ -160,7 +161,7 @@
                         <constraints>
                             <constraint firstItem="KQe-nY-ZnB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="30y-f6-AZ0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TyB-n8-8Ks" secondAttribute="bottom" constant="100" id="GIX-Vn-KLC"/>
-                            <constraint firstItem="KQe-nY-ZnB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="QTl-cf-eRL"/>
+                            <constraint firstItem="KQe-nY-ZnB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QTl-cf-eRL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KQe-nY-ZnB" secondAttribute="trailing" constant="16" id="heR-DI-3N7"/>
                             <constraint firstItem="TyB-n8-8Ks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ws2-Ej-mf5"/>
                         </constraints>
