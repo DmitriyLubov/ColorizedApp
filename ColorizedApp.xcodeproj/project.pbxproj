@@ -86,9 +86,9 @@
 		B6B563462990ED5400038568 /* ColorizedApp */ = {
 			isa = PBXGroup;
 			children = (
-				B613203829A8C34600EB0875 /* App */,
 				B613203929A8C36900EB0875 /* ViewControllers */,
 				B613203A29A8C3A300EB0875 /* StoryBoards */,
+				B613203829A8C34600EB0875 /* App */,
 				B6B563502990ED5400038568 /* Assets.xcassets */,
 			);
 			path = ColorizedApp;
